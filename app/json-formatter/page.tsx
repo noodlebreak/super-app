@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
-import { BackButton } from "../components/BackButton"
+import { BackButton } from "../../components/BackButton"
 
 export default function JSONFormatter() {
   const [input, setInput] = useState("")

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { QRCodeSVG } from "qrcode.react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { BackButton } from "../components/BackButton"
+import { BackButton } from "../../components/BackButton"
 
 export default function QRGenerator() {
   const [data, setData] = useState("")

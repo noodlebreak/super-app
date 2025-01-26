@@ -4,7 +4,7 @@ import { useState } from "react"
 import { format } from "sql-formatter"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { BackButton } from "../components/BackButton"
+import { BackButton } from "../../components/BackButton"
 
 export default function SQLFormatter() {
   const [input, setInput] = useState("")
