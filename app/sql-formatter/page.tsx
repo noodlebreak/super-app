@@ -1,20 +1,20 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { format } from 'sql-formatter'
+import { useState } from "react"
+import { format } from "sql-formatter"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { BackButton } from "../components/back-button"
+import { BackButton } from "../components/BackButton"
 
 export default function SQLFormatter() {
-  const [input, setInput] = useState('')
-  const [output, setOutput] = useState('')
+  const [input, setInput] = useState("")
+  const [output, setOutput] = useState("")
 
   const formatSQL = () => {
     try {
       setOutput(format(input))
     } catch (error) {
-      setOutput('Invalid SQL input')
+      setOutput("Invalid SQL input")
     }
   }
 
@@ -31,12 +31,7 @@ export default function SQLFormatter() {
         />
         <Button onClick={formatSQL}>Format SQL</Button>
       </div>
-      <Textarea
-        value={output}
-        readOnly
-        placeholder="Formatted SQL will appear here"
-        className="h-64"
-      />
+      <Textarea value={output} readOnly placeholder="Formatted SQL will appear here" className="h-64" />
     </div>
   )
 }

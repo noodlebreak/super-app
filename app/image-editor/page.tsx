@@ -1,9 +1,9 @@
-'use client'
+"use client"
 
-import { useEffect, useRef, useState } from 'react'
-import { fabric } from 'fabric'
+import { useEffect, useRef, useState } from "react"
+import { fabric } from "fabric"
 import { Button } from "@/components/ui/button"
-import { BackButton } from "../components/back-button"
+import { BackButton } from "../components/BackButton"
 
 export default function ImageEditor() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -21,7 +21,7 @@ export default function ImageEditor() {
 
   const addImage = () => {
     if (canvas) {
-      fabric.Image.fromURL('/placeholder.svg', (img) => {
+      fabric.Image.fromURL("/placeholder.svg", (img) => {
         img.scaleToWidth(200)
         canvas.add(img)
         canvas.renderAll()
@@ -31,11 +31,11 @@ export default function ImageEditor() {
 
   const addText = () => {
     if (canvas) {
-      const text = new fabric.IText('Edit me', {
+      const text = new fabric.IText("Edit me", {
         left: 50,
         top: 50,
-        fontFamily: 'Arial',
-        fill: '#000000',
+        fontFamily: "Arial",
+        fill: "#000000",
         fontSize: 20,
       })
       canvas.add(text)
@@ -45,12 +45,12 @@ export default function ImageEditor() {
 
   const addArrow = () => {
     if (canvas) {
-      const arrow = new fabric.Path('M 0 0 L 200 0 L 190 -10 M 200 0 L 190 10', {
+      const arrow = new fabric.Path("M 0 0 L 200 0 L 190 -10 M 200 0 L 190 10", {
         left: 50,
         top: 100,
-        stroke: '#000000',
+        stroke: "#000000",
         strokeWidth: 2,
-        fill: 'transparent',
+        fill: "transparent",
       })
       canvas.add(arrow)
       canvas.renderAll()
@@ -60,14 +60,14 @@ export default function ImageEditor() {
   const cropImage = () => {
     if (canvas) {
       const activeObject = canvas.getActiveObject() as fabric.Image
-      if (activeObject && activeObject.type === 'image') {
+      if (activeObject && activeObject.type === "image") {
         const cropped = new fabric.Rect({
           left: activeObject.left,
           top: activeObject.top,
           width: activeObject.width! / 2,
           height: activeObject.height! / 2,
-          fill: 'transparent',
-          stroke: '#000000',
+          fill: "transparent",
+          stroke: "#000000",
           strokeWidth: 2,
         })
         canvas.add(cropped)

@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
+import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { BackButton } from "../components/back-button"
+import { BackButton } from "../components/BackButton"
 
 export default function Base64() {
-  const [input, setInput] = useState('')
-  const [output, setOutput] = useState('')
+  const [input, setInput] = useState("")
+  const [output, setOutput] = useState("")
 
   const encode = () => {
     setOutput(btoa(input))
@@ -18,7 +18,7 @@ export default function Base64() {
     try {
       setOutput(atob(input))
     } catch (error) {
-      setOutput('Invalid Base64 input')
+      setOutput("Invalid Base64 input")
     }
   }
 
@@ -38,12 +38,7 @@ export default function Base64() {
           <Button onClick={decode}>Decode</Button>
         </div>
       </div>
-      <Textarea
-        value={output}
-        readOnly
-        placeholder="Result will appear here"
-        className="h-32"
-      />
+      <Textarea value={output} readOnly placeholder="Result will appear here" className="h-32" />
     </div>
   )
 }

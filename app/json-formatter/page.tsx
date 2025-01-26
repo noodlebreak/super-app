@@ -1,23 +1,23 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
+import { useState } from "react"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
-import { BackButton } from "../components/back-button"
+import { BackButton } from "../components/BackButton"
 
 export default function JSONFormatter() {
-  const [input, setInput] = useState('')
-  const [output, setOutput] = useState('')
-  const [indent, setIndent] = useState('2')
+  const [input, setInput] = useState("")
+  const [output, setOutput] = useState("")
+  const [indent, setIndent] = useState("2")
 
   const formatJSON = () => {
     try {
       const parsed = JSON.parse(input)
       setOutput(JSON.stringify(parsed, null, Number(indent)))
     } catch (error) {
-      setOutput('Invalid JSON input')
+      setOutput("Invalid JSON input")
     }
   }
 
@@ -46,12 +46,7 @@ export default function JSONFormatter() {
         </div>
         <Button onClick={formatJSON}>Format JSON</Button>
       </div>
-      <Textarea
-        value={output}
-        readOnly
-        placeholder="Formatted JSON will appear here"
-        className="h-64"
-      />
+      <Textarea value={output} readOnly placeholder="Formatted JSON will appear here" className="h-64" />
     </div>
   )
 }
